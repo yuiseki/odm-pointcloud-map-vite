@@ -1,0 +1,56 @@
+{
+  "version": 8,
+  "center": [
+    -91.993929,
+    46.842568
+  ],
+  "zoom": 17,
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgb(40, 40, 40)"
+      }
+    },
+    {
+      "id": "voxel",
+      "type": "fill-extrusion",
+      "source": "voxel",
+      "source-layer": "voxel",
+      "paint": {
+        "fill-extrusion-base": [
+          "get",
+          "h"
+        ],
+        "fill-extrusion-color": [
+          "get",
+          "color"
+        ],
+        "fill-extrusion-opacity": 1,
+        "fill-extrusion-height": [
+          "+",
+          [
+            "get",
+            "h"
+          ],
+          [
+            "get",
+            "spacing"
+          ]
+        ]
+      }
+    }
+  ],
+  "sources": {
+    "voxel": {
+      "type": "vector",
+      "attribution": "PointCloud from pierotofy/drone_dataset_brighton_beach",
+      "minzoom": 14,
+      "maxzoom": 19,
+      "tiles": [
+        "https://yuiseki.github.io/odm-pointcloud-map-vite/voxel/{z}/{x}/{y}.pbf"
+      ]
+    }
+  }
+}
