@@ -30,6 +30,7 @@ const showMap = async (texts) => {
   map = new maplibregl.Map({
     container: "map",
     hash: true,
+    //style: "https://tile.openstreetmap.jp/styles/osm-bright/style.json",
     style: "style.json",
     maxZoom: 20,
     maxPitch: 85,
